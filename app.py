@@ -45,7 +45,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
                     var existingAudio = document.getElementById('audio');
                     if (existingAudio) {
                         existingAudio.pause();
-                        existingAudio.remove();
+                        existingAudio.src = "";
                     }
                     var audio = document.createElement('audio');
                     audio.id = 'audio';
@@ -67,7 +67,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
                     var existingAudio = document.getElementById('audio');
                     if (existingAudio) {
                         existingAudio.pause();
-                        existingAudio.remove();
+                        existingAudio.src = "";
                     }
                     var audio = document.createElement('audio');
                     audio.id = 'audio';
@@ -89,7 +89,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
                     var existingAudio = document.getElementById('audio');
                     if (existingAudio) {
                         existingAudio.pause();
-                        existingAudio.remove();
+                        existingAudio.src = "";
                     }
                     var audio = document.createElement('audio');
                     audio.id = 'audio';
@@ -105,3 +105,4 @@ with st.expander('Corrección en inglés'):
     if text2:
         blob2 = TextBlob(text2)
         st.write(blob2.correct())
+
