@@ -37,9 +37,10 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTJ2eWRoajJ1dXU0NGUzaGk4NHE5enB3bjFwa3YweWFudGw2bGh1eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TdfyKrN7HGTIY/giphy.gif")
         elif x <= -0.5:
             st.write( 'Es un sentimiento Negativo 😔')
+            st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BpYmV1aWRidHYzcWZoMGJsajhyZ3N5dXFyeGtveHNqeG1saTVxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OPU6wzx8JrHna/giphy.gif")
         else:
             st.write( 'Es un sentimiento Neutral 😐')
-
+            st.image("https://media.giphy.com/media/H47VxJRkvQU3a7FOPf/giphy.gif?cid=ecf05e47x51tyhyw5sb3yo2z6wevk7lingayv1j106dh9aw2&ep=v1_gifs_search&rid=giphy.gif")
 with st.expander('Corrección en inglés'):
        text2 = st.text_area('Escribe por favor: ',key='4')
        if text2:
