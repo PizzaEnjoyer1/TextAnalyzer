@@ -27,9 +27,9 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
 
         translatedText = TextBlob(translator.translate(initialText, src="es", dest="en"))
         
-        st.write('Polarity: ', round(blob.sentiment.polarity,2))
-        st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
-        x=round(blob.sentiment.polarity,2)
+        st.write('Polarity: ', round(translatedText.sentiment.polarity,2))
+        st.write('Subjectivity: ', round(translatedText.sentiment.subjectivity,2))
+        x=round(translatedText.sentiment.polarity,2)
         if x >= 0.5:
             st.write( 'Es un sentimiento Positivo 😊')
         elif x <= -0.5:
