@@ -1,0 +1,5 @@
+streamlit
+#nltk
+textblob==0.17.1
+gTTS==2.2.2
+googletrans==3.1.0a0
