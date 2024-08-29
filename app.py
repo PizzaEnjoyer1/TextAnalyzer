@@ -23,15 +23,9 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
     text1 = st.text_area('Escribe por favor: ')
     if text1:
 
-        translation = translator.translate(text1, src="es", dest="en")
-        #trans_text = translation.text
-        #blob = TextBlob(trans_text)
-        blob = TextBlob(text1)
+        initialText = TextBlob(text1)
 
-        lang = blob.detect_language()
-
-        if(lang == "es"):
-          blob = translator.translate(text1, src="es", dest="en")
+        translatedText = TextBlob(translator.translate(initialText, src="es", dest="en"))
         
         st.write('Polarity: ', round(blob.sentiment.polarity,2))
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
