@@ -36,10 +36,10 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         st.write('Polarity: ', round(blobText.sentiment.polarity,2))
         st.write('Subjectivity: ', round(blobText.sentiment.subjectivity,2))
         x=round(blobText.sentiment.polarity,2)
-        if x >= 0.5:
+        if x >= 0.3:
             st.write( 'Es un sentimiento Positivo 😊')
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTJ2eWRoajJ1dXU0NGUzaGk4NHE5enB3bjFwa3YweWFudGw2bGh1eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TdfyKrN7HGTIY/giphy.gif")
-        elif x <= -0.5:
+        elif x <= -0.3:
             st.write( 'Es un sentimiento Negativo 😔')
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BpYmV1aWRidHYzcWZoMGJsajhyZ3N5dXFyeGtveHNqeG1saTVxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OPU6wzx8JrHna/giphy.gif")
         else:
