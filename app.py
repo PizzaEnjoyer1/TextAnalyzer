@@ -5,9 +5,9 @@ from googletrans import Translator
 translator = Translator()
 st.title('Uso de textblob')
 
-positive_audio_url = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3'  # Reemplaza con el enlace del audio positivo
-neutral_audio_url = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3'   # Reemplaza con el enlace del audio neutral
-negative_audio_url = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'  # Reemplaza con el enlace del audio negativo
+positive_audio_url = 'happy.wav'  # Reemplaza con el enlace del audio positivo
+neutral_audio_url = 'neutral.wav'   # Reemplaza con el enlace del audio neutral
+negative_audio_url = 'sad.wav'  # Reemplaza con el enlace del audio negativo
 
 st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
 with st.sidebar:
