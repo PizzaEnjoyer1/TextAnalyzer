@@ -34,6 +34,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         x=round(blobText.sentiment.polarity,2)
         if x >= 0.5:
             st.write( 'Es un sentimiento Positivo 😊')
+            st.video('https://www.youtube.com/embed/J---aiyB0sQ')
         elif x <= -0.5:
             st.write( 'Es un sentimiento Negativo 😔')
         else:
