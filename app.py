@@ -25,10 +25,14 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
 
         initialText = TextBlob(text1)
 
+        
+
         translation = translator.translate(initialText, src="es", dest="en")
 
         blobText = TextBlob(translation.text)
-        
+
+        st.write("El texto original es :", text1)
+        st.write("El texto de la traducción es: ", translation)
         st.write('Polarity: ', round(blobText.sentiment.polarity,2))
         st.write('Subjectivity: ', round(blobText.sentiment.subjectivity,2))
         x=round(blobText.sentiment.polarity,2)
