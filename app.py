@@ -43,9 +43,9 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
                     <source src="{positive_audio_url}" type="audio/mpeg">
                 </audio>
                 <script>
-                    // Pausar todos los audios antes de reproducir el nuevo
+
                     document.querySelectorAll('audio').forEach(audio => audio.pause());
-                    // Reproducir solo el audio positivo
+
                     document.getElementById('positive_audio').play();
                 </script>
             ''', unsafe_allow_html=True)
@@ -59,9 +59,9 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
                     <source src="{negative_audio_url}" type="audio/mpeg">
                 </audio>
                 <script>
-                    // Pausar todos los audios antes de reproducir el nuevo
+
                     document.querySelectorAll('audio').forEach(audio => audio.pause());
-                    // Reproducir solo el audio negativo
+
                     document.getElementById('negative_audio').play();
                 </script>
             ''', unsafe_allow_html=True)
@@ -75,9 +75,9 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
                     <source src="{neutral_audio_url}" type="audio/mpeg">
                 </audio>
                 <script>
-                    // Pausar todos los audios antes de reproducir el nuevo
+
                     document.querySelectorAll('audio').forEach(audio => audio.pause());
-                    // Reproducir solo el audio neutral
+
                     document.getElementById('neutral_audio').play();
                 </script>
             ''', unsafe_allow_html=True)
