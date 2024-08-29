@@ -27,60 +27,84 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         translation = translator.translate(initialText, src="es", dest="en")
         blobText = TextBlob(translation.text)
 
-        st.write("El texto original es :", text1)
-        st.write("El texto de la traducción es: ", translation.text)
-        st.write('Polarity: ', round(blobText.sentiment.polarity, 2))
-        st.write('Subjectivity: ', round(blobText.sentiment.subjectivity, 2))
+        st.write("El texto original es:", text1)
+        st.write("El texto de la traducción es:", translation.text)
+        st.write('Polarity:', round(blobText.sentiment.polarity, 2))
+        st.write('Subjectivity:', round(blobText.sentiment.subjectivity, 2))
         x = round(blobText.sentiment.polarity, 2)
 
         # Detectar sentimiento y mostrar contenido
         if x >= 0.3:
             st.write('Es un sentimiento Positivo 😊')
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTJ2eWRoajJ1dXU0NGUzaGk4NHE5enB3bjFwa3YweWFudGw2bGh1eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TdfyKrN7HGTIY/giphy.gif")
-            # Reproducir audio positivo
             st.markdown(f'''
-                <audio id="positive_audio" autoplay>
-                    <source src="{positive_audio_url}" type="audio/mpeg">
-                </audio>
+                <div id="audio-container">
+                    <audio id="positive_audio" autoplay>
+                        <source src="{positive_audio_url}" type="audio/mpeg">
+                    </audio>
+                </div>
                 <script>
-
-                    document.querySelectorAll('audio').forEach(audio => audio.pause());
-
-                    document.getElementById('positive_audio').play();
+                    document.querySelectorAll('audio').forEach(audio => audio.remove());
+                    
+                    var audioContainer = document.getElementById('audio-container');
+                    var newAudio = document.createElement('audio');
+                    newAudio.id = 'positive_audio';
+                    newAudio.autoplay = true;
+                    newAudio.src = '{positive_audio_url}';
+                    newAudio.type = 'audio/mpeg';
+                    audioContainer.appendChild(newAudio);
+                    newAudio.play();
                 </script>
             ''', unsafe_allow_html=True)
 
         elif x <= -0.3:
             st.write('Es un sentimiento Negativo 😔')
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BpYmV1aWRidHYzcWZoMGJsajhyZ3N5dXFyeGtveHNqeG1saTVxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OPU6wzx8JrHna/giphy.gif")
-            # Reproducir audio negativo
             st.markdown(f'''
-                <audio id="negative_audio" autoplay>
-                    <source src="{negative_audio_url}" type="audio/mpeg">
-                </audio>
+                <div id="audio-container">
+                    <audio id="negative_audio" autoplay>
+                        <source src="{negative_audio_url}" type="audio/mpeg">
+                    </audio>
+                </div>
                 <script>
-
-                    document.querySelectorAll('audio').forEach(audio => audio.pause());
-
-                    document.getElementById('negative_audio').play();
+                    document.querySelectorAll('audio').forEach(audio => audio.remove());
+                    
+                    var audioContainer = document.getElementById('audio-container');
+                    var newAudio = document.createElement('audio');
+                    newAudio.id = 'negative_audio';
+                    newAudio.autoplay = true;
+                    newAudio.src = '{negative_audio_url}';
+                    newAudio.type = 'audio/mpeg';
+                    audioContainer.appendChild(newAudio);
+                    newAudio.play();
                 </script>
             ''', unsafe_allow_html=True)
 
         else:
             st.write('Es un sentimiento Neutral 😐')
             st.image("https://media.giphy.com/media/H47VxJRkvQU3a7FOPf/giphy.gif?cid=ecf05e47x51tyhyw5sb3yo2z6wevk7lingayv1j106dh9aw2&ep=v1_gifs_search&rid=giphy.gif")
-            # Reproducir audio neutral
             st.markdown(f'''
-                <audio id="neutral_audio" autoplay>
-                    <source src="{neutral_audio_url}" type="audio/mpeg">
-                </audio>
+                <div id="audio-container">
+                    <audio id="neutral_audio" autoplay>
+                        <source src="{neutral_audio_url}" type="audio/mpeg">
+                    </audio>
+                </div>
                 <script>
-
-                    document.querySelectorAll('audio').forEach(audio => audio.pause());
-
-                    document.getElementById('neutral_audio').play();
+                    document.querySelectorAll('audio').forEach(audio => audio.remove());
+                    
+                    var audioContainer = document.getElementById('audio-container');
+                    var newAudio = document.createElement('audio');
+                    newAudio.id = 'neutral_audio';
+                    newAudio.autoplay = true;
+                    newAudio.src = '{neutral_audio_url}';
+                    newAudio.type = 'audio/mpeg';
+                    audioContainer.appendChild(newAudio);
+                    newAudio.play();
                 </script>
             ''', unsafe_allow_html=True)
+
+        
+        
 
 with st.expander('Corrección en inglés'):
     text2 = st.text_area('Escribe por favor: ', key='4')
