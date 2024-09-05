@@ -37,68 +37,17 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         if x >= 0.3:
             st.write('Es un sentimiento Positivo 😊')
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTJ2eWRoajJ1dXU0NGUzaGk4NHE5enB3bjFwa3YweWFudGw2bGh1eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TdfyKrN7HGTIY/giphy.gif")
-            st.markdown(f'''
-                <audio id="audio" autoplay>
-                    <source src="{positive_audio_url}" type="audio/mpeg">
-                </audio>
-                <script>
-                    var existingAudio = document.getElementById('audio');
-                    if (existingAudio) {
-                        existingAudio.pause();
-                        existingAudio.src = "";
-                    }
-                    var audio = document.createElement('audio');
-                    audio.id = 'audio';
-                    audio.autoplay = true;
-                    audio.src = '{positive_audio_url}';
-                    audio.type = 'audio/mpeg';
-                    document.body.appendChild(audio);
-                </script>
-            ''', unsafe_allow_html=True)
+
 
         elif x <= -0.3:
             st.write('Es un sentimiento Negativo 😔')
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BpYmV1aWRidHYzcWZoMGJsajhyZ3N5dXFyeGtveHNqeG1saTVxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OPU6wzx8JrHna/giphy.gif")
-            st.markdown(f'''
-                <audio id="audio" autoplay>
-                    <source src="{negative_audio_url}" type="audio/mpeg">
-                </audio>
-                <script>
-                    var existingAudio = document.getElementById('audio');
-                    if (existingAudio) {
-                        existingAudio.pause();
-                        existingAudio.src = "";
-                    }
-                    var audio = document.createElement('audio');
-                    audio.id = 'audio';
-                    audio.autoplay = true;
-                    audio.src = '{negative_audio_url}';
-                    audio.type = 'audio/mpeg';
-                    document.body.appendChild(audio);
-                </script>
-            ''', unsafe_allow_html=True)
+
 
         else:
             st.write('Es un sentimiento Neutral 😐')
             st.image("https://media.giphy.com/media/H47VxJRkvQU3a7FOPf/giphy.gif?cid=ecf05e47x51tyhyw5sb3yo2z6wevk7lingayv1j106dh9aw2&ep=v1_gifs_search&rid=giphy.gif")
-            st.markdown(f'''
-                <audio id="audio" autoplay>
-                    <source src="{neutral_audio_url}" type="audio/mpeg">
-                </audio>
-                <script>
-                    var existingAudio = document.getElementById('audio');
-                    if (existingAudio) {
-                        existingAudio.pause();
-                        existingAudio.src = "";
-                    }
-                    var audio = document.createElement('audio');
-                    audio.id = 'audio';
-                    audio.autoplay = true;
-                    audio.src = '{neutral_audio_url}';
-                    audio.type = 'audio/mpeg';
-                    document.body.appendChild(audio);
-                </script>
-            ''', unsafe_allow_html=True)
+
 
 with st.expander('Corrección en inglés'):
     text2 = st.text_area('Escribe por favor: ', key='4')
