@@ -50,7 +50,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
 
 
 with st.expander('Corrección en inglés'):
-    text2 = st.text_area('Escribe por favor: ', key='4')
+    text2 = st.text_area('Escribe por favor el texto que desees corregir, en caso de que quieras ser preciso con el análisis: ', key='4')
     if text2:
         blob2 = TextBlob(text2)
         st.write(blob2.correct())
