@@ -40,20 +40,17 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         if x >= 0.3:
             st.write('Es un sentimiento Positivo 😊')
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTJ2eWRoajJ1dXU0NGUzaGk4NHE5enB3bjFwa3YweWFudGw2bGh1eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TdfyKrN7HGTIY/giphy.gif")
-            audio_html = f'<audio autoplay src="{positive_audio_url}"></audio>'
-            st.markdown(audio_html, unsafe_allow_html=True)  # Reproduce el audio positivo
+            st.audio(positive_audio_url, format="audio/wav")  # Reproduce el audio positivo
 
         elif x <= -0.3:
             st.write('Es un sentimiento Negativo 😔')
             st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BpYmV1aWRidHYzcWZoMGJsajhyZ3N5dXFyeGtveHNqeG1saTVxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OPU6wzx8JrHna/giphy.gif")
-            audio_html = f'<audio autoplay src="{negative_audio_url}"></audio>'
-            st.markdown(audio_html, unsafe_allow_html=True)  # Reproduce el audio negativo
+            st.audio(negative_audio_url, format="audio/wav")  # Reproduce el audio negativo
 
         else:
             st.write('Es un sentimiento Neutral 😐')
             st.image("https://media.giphy.com/media/H47VxJRkvQU3a7FOPf/giphy.gif?cid=ecf05e47x51tyhyw5sb3yo2z6wevk7lingayv1j106dh9aw2&ep=v1_gifs_search&rid=giphy.gif")
-            audio_html = f'<audio autoplay src="{neutral_audio_url}"></audio>'
-            st.markdown(audio_html, unsafe_allow_html=True)  # Reproduce el audio neutral
+            st.audio(neutral_audio_url, format="audio/wav")  # Reproduce el audio neutral
     else:
         st.write("Por favor ingresa un texto para analizar.")  # Mensaje si no hay texto
 
